@@ -10,6 +10,9 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AudioCommon", "Core\AudioCommon\AudioCommon.vcxproj", "{54AA7840-5BEB-4A0C-9452-74BA4CC7FD44}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Common", "Core\Common\Common.vcxproj", "{2E6C348C-C75C-4D94-8D1E-9C1FCBF3EFE4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DF3A8E77-C1FA-4FFB-A2FD-CBF927573698} = {DF3A8E77-C1FA-4FFB-A2FD-CBF927573698}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DiscIO", "Core\DiscIO\DiscIO.vcxproj", "{160BDC25-5626-4B0D-BDD8-2953D9777FB5}"
 EndProject
@@ -96,6 +99,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "D3D12", "Core\VideoBackends\D3D12\D3D12.vcxproj", "{570215B7-E32F-4438-95AE-C8D955F9FCA3}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "D3DCommon", "Core\VideoBackends\D3DCommon\D3DCommon.vcxproj", "{DEA96CF2-F237-4A1A-B32F-C916769EFB50}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OpenXR", "..\Externals\OpenXR\OpenXR.vcxproj", "{DF3A8E77-C1FA-4FFB-A2FD-CBF927573698}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -369,6 +374,12 @@ Global
 		{DEA96CF2-F237-4A1A-B32F-C916769EFB50}.Release|x64.ActiveCfg = Release|x64
 		{DEA96CF2-F237-4A1A-B32F-C916769EFB50}.Release|x64.Build.0 = Release|x64
 		{DEA96CF2-F237-4A1A-B32F-C916769EFB50}.Release|x86.ActiveCfg = Release|x64
+		{DF3A8E77-C1FA-4FFB-A2FD-CBF927573698}.Debug|x64.ActiveCfg = Debug|x64
+		{DF3A8E77-C1FA-4FFB-A2FD-CBF927573698}.Debug|x64.Build.0 = Debug|x64
+		{DF3A8E77-C1FA-4FFB-A2FD-CBF927573698}.Debug|x86.ActiveCfg = Debug|x64
+		{DF3A8E77-C1FA-4FFB-A2FD-CBF927573698}.Release|x64.ActiveCfg = Release|x64
+		{DF3A8E77-C1FA-4FFB-A2FD-CBF927573698}.Release|x64.Build.0 = Release|x64
+		{DF3A8E77-C1FA-4FFB-A2FD-CBF927573698}.Release|x86.ActiveCfg = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -412,6 +423,7 @@ Global
 		{4C3B2264-EA73-4A7B-9CFE-65B0FD635EBB} = {87ADDFF9-5768-4DA2-A33B-2477593D6677}
 		{570215B7-E32F-4438-95AE-C8D955F9FCA3} = {AAD1BCD6-9804-44A5-A5FC-4782EA00E9D4}
 		{DEA96CF2-F237-4A1A-B32F-C916769EFB50} = {AAD1BCD6-9804-44A5-A5FC-4782EA00E9D4}
+		{DF3A8E77-C1FA-4FFB-A2FD-CBF927573698} = {87ADDFF9-5768-4DA2-A33B-2477593D6677}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {710976F2-1BC7-4F2A-B32D-5DD2BBCB44E1}

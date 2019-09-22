@@ -8,6 +8,7 @@
 #include <vector>
 
 #include "Common/CommonTypes.h"
+#include "Common/OpenXR.h"
 #include "Common/WindowSystemInfo.h"
 #include "VideoBackends/Vulkan/Constants.h"
 #include "VideoCommon/VideoConfig.h"
@@ -105,6 +106,8 @@ public:
   // Finds a memory type for upload or readback buffers.
   u32 GetUploadMemoryType(u32 bits, bool* is_coherent = nullptr);
   u32 GetReadbackMemoryType(u32 bits, bool* is_coherent = nullptr, bool* is_cached = nullptr);
+
+  std::unique_ptr<OpenXR::Session> CreateOpenXRSession();
 
 private:
   using ExtensionList = std::vector<const char*>;

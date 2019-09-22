@@ -279,6 +279,7 @@
     </ClInclude>
     <ClInclude Include="VariantUtil.h" />
     <ClInclude Include="DynamicLibrary.h" />
+    <ClInclude Include="OpenXR.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CDUtils.cpp" />
@@ -361,6 +362,7 @@
       <Filter>GL\GLInterface</Filter>
     </ClCompile>
     <ClCompile Include="DynamicLibrary.cpp" />
+    <ClCompile Include="OpenXR.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="CMakeLists.txt" />

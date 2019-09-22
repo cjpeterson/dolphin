@@ -111,7 +111,7 @@ void EnhancementsWidget::CreateWidgets()
   stereoscopy_box->setLayout(stereoscopy_layout);
 
   m_3d_mode = new GraphicsChoice({tr("Off"), tr("Side-by-Side"), tr("Top-and-Bottom"),
-                                  tr("Anaglyph"), tr("HDMI 3D"), tr("Passive")},
+                                  tr("Anaglyph"), tr("HDMI 3D"), tr("Passive"), tr("OpenXR")},
                                  Config::GFX_STEREO_MODE);
   m_3d_depth = new GraphicsSlider(0, 100, Config::GFX_STEREO_DEPTH);
   m_3d_convergence = new GraphicsSlider(0, 200, Config::GFX_STEREO_CONVERGENCE, 100);
