@@ -112,15 +112,19 @@ bool Renderer::Initialize()
   if (!m_post_processor->Initialize(m_backbuffer_format))
     return false;
 
+#if USE_OPENXR
   CheckOpenXRState();
+#endif
 
   return true;
 }
 
 void Renderer::Shutdown()
 {
+#if USE_OPENXR
   m_openxr_session = {};
   OpenXR::Shutdown();
+#endif
 
   // First stop any framedumping, which might need to dump the last xfb frame. This process
   // can require additional graphics sub-systems so it needs to be done first
@@ -480,7 +484,9 @@ void Renderer::CheckForConfigChanges()
     BPFunctions::SetScissor();
   }
 
+#if USE_OPENXR
   CheckOpenXRState();
+#endif
 }
 
 // Create On-Screen-Messages
@@ -877,6 +883,7 @@ std::tuple<int, int> Renderer::CalculateOutputDimensions(int width, int height) 
   return std::make_tuple(width, height);
 }
 
+#if USE_OPENXR
 void Renderer::CheckOpenXRState()
 {
   if (g_ActiveConfig.stereo_mode == StereoMode::OpenXR)
@@ -891,6 +898,7 @@ void Renderer::CheckOpenXRState()
     m_openxr_session = {};
   }
 }
+#endif
 
 void Renderer::CheckFifoRecording()
 {
@@ -1283,6 +1291,7 @@ void Renderer::Swap(u32 xfb_addr, u32 fb_width, u32 fb_stride, u32 fb_height, u6
       {
         BindBackbuffer({{0.0f, 0.0f, 0.0f, 1.0f}});
 
+#if USE_OPENXR
         if (m_openxr_session)
         {
           m_openxr_session->BeginFrame();
@@ -1292,6 +1301,7 @@ void Renderer::Swap(u32 xfb_addr, u32 fb_width, u32 fb_stride, u32 fb_height, u6
           m_backbuffer_width = swapchain_size.width;
           m_backbuffer_height = swapchain_size.height;
         }
+#endif
 
         UpdateDrawRectangle();
 
@@ -1310,6 +1320,7 @@ void Renderer::Swap(u32 xfb_addr, u32 fb_width, u32 fb_stride, u32 fb_height, u6
           PresentBackbuffer();
         }
 
+#if USE_OPENXR
         if (m_openxr_session)
         {
           m_openxr_session->ReleaseSwapchainImage();
@@ -1321,6 +1332,7 @@ void Renderer::Swap(u32 xfb_addr, u32 fb_width, u32 fb_stride, u32 fb_height, u6
             m_openxr_session = {};
           }
         }
+#endif
 
         // Update the window size based on the frame that was just rendered.
         // Due to depending on guest state, we need to call this every frame.

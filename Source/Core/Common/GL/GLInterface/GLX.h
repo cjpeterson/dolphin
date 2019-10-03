@@ -32,7 +32,9 @@ public:
 
   void* GetFuncAddress(const std::string& name) override;
 
+#if USE_OPENXR
   std::unique_ptr<OpenXR::Session> CreateOpenXRSession() override;
+#endif
 
 protected:
   bool Initialize(void* display_handle, void* window_handle, bool stereo, bool core) override;
