@@ -122,7 +122,7 @@ const ConfigInfo<bool> MAIN_RENDER_WINDOW_AUTOSIZE{
     {System::Main, "Display", "RenderWindowAutoSize"}, false};
 const ConfigInfo<bool> MAIN_KEEP_WINDOW_ON_TOP{{System::Main, "Display", "KeepWindowOnTop"}, false};
 const ConfigInfo<bool> MAIN_DISABLE_SCREENSAVER{{System::Main, "Display", "DisableScreenSaver"},
-                                                false};
+                                                true};
 
 // Main.DSP
 
