@@ -14,6 +14,7 @@
 #include "Common/Logging/Log.h"
 #include "Common/ScopeGuard.h"
 #include "InputCommon/ControllerInterface/DInput/DInput.h"
+#include "InputCommon/ControllerInterface/WGInput/WGInput.h"
 #include "InputCommon/ControllerInterface/XInput/XInput.h"
 
 constexpr UINT WM_DOLPHIN_STOP = WM_USER;
@@ -28,6 +29,7 @@ static LRESULT CALLBACK WindowProc(HWND hwnd, UINT message, WPARAM wparam, LPARA
   if (message == WM_INPUT_DEVICE_CHANGE)
   {
     ciface::DInput::PopulateDevices(s_hwnd);
+    ciface::WGInput::PopulateDevices();
     ciface::XInput::PopulateDevices();
     s_done_populating.Set();
   }
@@ -38,6 +40,7 @@ static LRESULT CALLBACK WindowProc(HWND hwnd, UINT message, WPARAM wparam, LPARA
 void ciface::Win32::Init(void* hwnd)
 {
   s_hwnd = static_cast<HWND>(hwnd);
+  WGInput::Init();
   XInput::Init();
 
   std::promise<HWND> message_window_promise;
@@ -141,5 +144,6 @@ void ciface::Win32::DeInit()
     s_message_window = nullptr;
   }
 
+  WGInput::DeInit();
   XInput::DeInit();
 }

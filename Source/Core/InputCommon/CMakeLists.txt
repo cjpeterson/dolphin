@@ -80,6 +80,8 @@ if(WIN32)
     ControllerInterface/DInput/NamedKeys.h
     ControllerInterface/DInput/XInputFilter.cpp
     ControllerInterface/DInput/XInputFilter.h
+		ControllerInterface/WGInput/WGInput.cpp
+    ControllerInterface/WGInput/WGInput.h
     ControllerInterface/Win32/Win32.cpp
     ControllerInterface/Win32/Win32.h
     ControllerInterface/XInput/XInput.cpp

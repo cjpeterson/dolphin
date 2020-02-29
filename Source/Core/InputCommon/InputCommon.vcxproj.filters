@@ -31,6 +31,9 @@
     <Filter Include="ControllerInterface\DualShockUDPClient">
       <UniqueIdentifier>{ff02580e-3a62-4de4-a135-3a6c2c339a90}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ControllerInterface\WGInput">
+      <UniqueIdentifier>{78e46a92-847a-4212-8a53-cbd70b692c32}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GCAdapter.cpp" />
@@ -110,9 +113,6 @@
     <ClCompile Include="ControllerInterface\Win32\Win32.cpp">
       <Filter>ControllerInterface\Win32</Filter>
     </ClCompile>
-    <ClCompile Include="ControllerInterface\Wiimote\Wiimote.cpp">
-      <Filter>ControllerInterface\Wiimote</Filter>
-    </ClCompile>
     <ClCompile Include="ControlReference\ExpressionParser.cpp">
       <Filter>ControllerInterface</Filter>
     </ClCompile>
@@ -137,6 +137,10 @@
     </ClCompile>
     <ClCompile Include="ControllerInterface\DualShockUDPClient\DualShockUDPClient.cpp">
       <Filter>ControllerInterface\DualShockUDPClient</Filter>
+    </ClCompile>
+    <ClCompile Include="ControllerInterface\Wiimote\Wiimote.cpp" />
+    <ClCompile Include="ControllerInterface\WGInput\WGInput.cpp">
+      <Filter>ControllerInterface\WGInput</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -221,9 +225,6 @@
     <ClInclude Include="ControllerInterface\Win32\Win32.h">
       <Filter>ControllerInterface\Win32</Filter>
     </ClInclude>
-    <ClInclude Include="ControllerInterface\Wiimote\Wiimote.h">
-      <Filter>ControllerInterface\Wiimote</Filter>
-    </ClInclude>
     <ClInclude Include="ControlReference\ExpressionParser.h">
       <Filter>ControllerInterface</Filter>
     </ClInclude>
@@ -249,6 +250,10 @@
     </ClInclude>
     <ClInclude Include="ControllerInterface\DualShockUDPClient\DualShockUDPProto.h">
       <Filter>ControllerInterface\DualShockUDPClient</Filter>
+    </ClInclude>
+    <ClInclude Include="ControllerInterface\Wiimote\Wiimote.h" />
+    <ClInclude Include="ControllerInterface\WGInput\WGInput.h">
+      <Filter>ControllerInterface\WGInput</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
